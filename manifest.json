@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Operations Helper 4 FE",
+  "version": "1.0",
+  "description": "운영 도움 용도",
+  "permissions": [
+    "tabs",
+    "windows"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost/*",
+        "http://localhost:*/*",
+        "http://127.0.0.1/*",
+        "http://127.0.0.1:*/*"
+      ],
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
