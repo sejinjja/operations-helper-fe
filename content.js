@@ -1,4 +1,7 @@
-(function () {
+(async function () {
+    console.log('customElements', customElements)
+  "use strict";
+  await import(chrome.runtime.getURL("src/elements/index.js"));
   // 중복 방지
   if (document.getElementById("ext-controls-bar")) return;
 
