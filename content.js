@@ -23,7 +23,7 @@
   controls.id = "ext-controls-bar";
   
   Object.assign(controls.style, {
-    position: "fixed",
+    position: "sticky",
     bottom: "0",
     left: "0",
     right: "0",
@@ -74,7 +74,7 @@
     
     btn.onclick = () => {
       chrome.runtime.sendMessage({
-        action: "openWindow",
+        action: "openTab",
         url: url,
         name: name
       });
