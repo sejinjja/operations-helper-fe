@@ -3,21 +3,17 @@
   "name": "Operations Helper 4 FE",
   "version": "1.0",
   "description": "운영 도움 용도",
-  "permissions": [
-    "tabs",
-    "windows"
-  ],
+  "permissions": ["activeTab"],
   "background": {
     "service_worker": "background.js"
   },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "src/elements/*"
-      ],
-      "matches": ["<all_urls>"]
-    }
+  "host_permissions": [
+    "http://localhost/*",
+    "http://localhost:*/*",
+    "http://127.0.0.1/*",
+    "http://127.0.0.1:*/*"
   ],
+  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
       "matches": [
@@ -27,8 +23,18 @@
         "http://127.0.0.1:*/*"
       ],
       "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "run_at": "document_end"
+      "world": "MAIN",
+      "js": ["src/main/index.js"]
+    },    
+    {
+      "matches": [
+        "http://localhost/*",
+        "http://localhost:*/*",
+        "http://127.0.0.1/*",
+        "http://127.0.0.1:*/*"
+      ],
+      "matches": ["<all_urls>"],
+      "js": ["src/extension/index.js"]
     }
   ]
 }

@@ -1,7 +1,7 @@
 (async function () {
-    console.log('customElements', customElements)
+    console.log('customElements', customElements, useNuxtApp)
   "use strict";
-  await import(chrome.runtime.getURL("src/elements/index.js"));
+  // await import(chrome.runtime.getURL("src/elements/index.js"));
   // 중복 방지
   if (document.getElementById("ext-controls-bar")) return;
 
@@ -75,13 +75,13 @@
       btn.style.transform = "translateY(0)";
     };
     
-    btn.onclick = () => {
-      chrome.runtime.sendMessage({
-        action: "openTab",
-        url: url,
-        name: name
-      });
-    };
+    // btn.onclick = () => {
+    //   chrome.runtime.sendMessage({
+    //     action: "openTab",
+    //     url: url,
+    //     name: name
+    //   });
+    // };
     
     controls.appendChild(btn);
   });

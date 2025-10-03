@@ -1,3 +1,0 @@
-export default function loadModule () {  
-  // 커스텀 엘리먼트 기반으로 구현 불가능....
-}
